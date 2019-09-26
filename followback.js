@@ -1,18 +1,3 @@
-/* function followusers()
-{
-	var userlist = $(".item-content").find("#follow-user");
-	for(var i = 0; (i < userlist.length) ; i++) {
-		var user = $(userlist.get(i));
-		if(!user.hasClass("f-hide")) {
-			console.log("Follow : " + user.parent().parent().find("label h5 a").html());
-			followqueue++;
-			followuser(user.attr("data-ajax-href"))
-		}
-	}
-}
-
-followusers(); */
-
 function followuser(href)
 {
 	var xhttp = new XMLHttpRequest();
@@ -28,16 +13,22 @@ function followuser(href)
 
 var userindex = 0;
 
-var ulist = $(".item-content").find("#follow-user");
+// var ulist = $(".item-content").find("#follow-user");
+var users = document.getElementsByClassName("item-content")
 
 function follownextuser()
 {
-	var user = $(ulist.get(userindex++));
-	while(user.hasClass("f-hide")) {
-		user = $(ulist.get(userindex++));
+	// var user = $(ulist.get(userindex++));	
+	var done = false;
+	// while(user.hasClass("f-hide")) {
+	while(!done) {
+		var user = users[userindex++];
+		var follow_btn = user.getElementsByClassName("ai-c")[0].getElementsByClassName("btn")[0];
+		done = follow_btn.getAttribute("class").indexOf("f-hide") >= 0;
 	}
-	console.log("Follow : " + user.parent().parent().find("label h5 a").html());
-	followuser(user.attr("data-ajax-href"))
+	console.log("Follow : " + user..getElementsByTagName("label")[0].getElementsByTagName("h5")[0].innerText;
+	// followuser(user.attr("data-ajax-href"))
+	follow_user(follow_btn.getAttribute("data-ajax-href"));
 }
 
 setInterval(follownextuser, 500);
