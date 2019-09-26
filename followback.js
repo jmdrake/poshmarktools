@@ -6,7 +6,7 @@ function followuser(href)
 			console.log(this.responseText);
 		}
 	}
-	xhttp.open("POST", href, true)
+	xhttp.open("POST", href, true);
 	xhttp.send();
 }
 
