@@ -26,7 +26,7 @@ function follownextuser()
 		var follow_btn = user.getElementsByClassName("ai-c")[0].getElementsByClassName("btn")[0];
 		done = follow_btn.getAttribute("class").indexOf("f-hide") >= 0;
 	}
-	console.log("Follow : " + user..getElementsByTagName("label")[0].getElementsByTagName("h5")[0].innerText;
+	console.log("Follow : " + user.getElementsByTagName("label")[0].getElementsByTagName("h5")[0].innerText;
 	// followuser(user.attr("data-ajax-href"))
 	follow_user(follow_btn.getAttribute("data-ajax-href"));
 }
